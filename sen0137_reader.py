@@ -9,10 +9,10 @@ Uses Adafruit_DHT library inside a virtual environment.
 """
 
 import time
-import Adafruit_DHT  # Installed in your .venv
+import adafruit_dht  # Installed in your .venv
 
 # Correct sensor type: DHT22 for SEN0137
-SENSOR = Adafruit_DHT.DHT22
+SENSOR = adafruit_dht.DHT22
 
 # BCM GPIO number where the DATA pin of SEN0137 is connected
 DHT_PIN = 4  # You said you're using GPIO4 (physical pin 7)
@@ -28,7 +28,7 @@ def read_sensor():
         - temperature_c is in °C
         If the read fails, both values may be None.
     """
-    humidity, temperature_c = Adafruit_DHT.read_retry(SENSOR, DHT_PIN)
+    humidity, temperature_c = adafruit_dht.read_retry(SENSOR, DHT_PIN)
     return humidity, temperature_c
 
 
